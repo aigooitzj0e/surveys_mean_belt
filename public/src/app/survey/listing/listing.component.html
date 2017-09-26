@@ -25,7 +25,7 @@
       <td><a (click)="onShow(survey._id)" ><span>{{ survey.question }}</span></a></td>
       <td>{{ survey.created_at | date:"medium"}}</td>
       <!-- <td><button>Delete</button></td> -->
-      <td *ngIf="survey._user == currentUser._id"><button (click)="onDestroy(survey._id)">Delete</button></td>
+      <td *ngIf="survey._user._id == currentUser._id"><button (click)="onDestroy(survey._id)">Delete</button></td>
 
     </tr>
   </tbody>
