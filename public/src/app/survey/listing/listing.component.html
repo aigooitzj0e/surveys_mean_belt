@@ -1,0 +1,32 @@
+<button (click)="redirectCreate()">Create a New Poll</button> | <button (click)="logout()">Logout</button>
+<h1>Welcome {{currentUser.name}}</h1>
+<h3>Current Polls</h3>
+
+<input type="text"
+    name="search"
+    placeholder="Search Survey"
+		[(ngModel)]="searchTerm"
+		#search = "ngModel"
+		(keyup)="searchSurveys()"
+	>
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Survey Question</td>
+      <td>Date Posted</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let survey of sList">
+      <td>{{ survey._user.name }}</td>
+      <td><a (click)="onShow(survey._id)" ><span>{{ survey.question }}</span></a></td>
+      <td>{{ survey.created_at | date:"medium"}}</td>
+      <!-- <td><button>Delete</button></td> -->
+      <td *ngIf="survey._user == currentUser._id"><button (click)="onDestroy(survey._id)">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>

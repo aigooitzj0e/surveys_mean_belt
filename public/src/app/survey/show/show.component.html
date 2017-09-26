@@ -1,0 +1,33 @@
+<h1>{{survey.question}}</h1>
+<button (click)="home()">Home</button>
+<table>
+  <thead>
+    <tr>
+      <td>Options</td>
+      <td>Vote Count</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{survey.option1}}</td>
+      <td>{{survey.like1}}</td>
+      <td><button (click)="like1()">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{survey.option2}}</td>
+      <td>{{survey.like2}}</td>
+      <td><button (click)="like2()">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{survey.option3}}</td>
+      <td>{{survey.like3}}</td>
+      <td><button (click)="like3()">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{survey.option4}}</td>
+      <td>{{survey.like4}}</td>
+      <td><button (click)="like4()">Vote</button></td>
+    </tr>
+  </tbody>
+</table>
